@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_time_tracker/widgets/custom_elevated_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key, required this.title}) : super(key: key);
@@ -13,6 +14,7 @@ class SignInPage extends StatelessWidget {
         elevation: 2.0,
       ),
       body: _buildContent(),
+      backgroundColor: Colors.grey[200],
     );
   }
 
@@ -34,14 +36,9 @@ class SignInPage extends StatelessWidget {
           SizedBox(
             height: 8.0,
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Sign in with Google'),
-            style: TextButton.styleFrom(
-              primary: Colors.black,
-              backgroundColor: Colors.white,
-            ),
-          )
+          CustomElevatedButton(
+            title: 'Sign in with Google',
+          ),
         ],
       ),
     );
