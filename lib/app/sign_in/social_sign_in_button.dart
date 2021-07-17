@@ -3,8 +3,8 @@ import 'package:flutter_time_tracker/widgets/custom_elevated_button.dart';
 
 class SocialSignInButton extends CustomElevatedButton {
   SocialSignInButton({
-    String? assetName,
-    String? text,
+    required String? assetName,
+    required String? text,
     Color? color,
     Color? textColor,
     VoidCallback? onPressed,
