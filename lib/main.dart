@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: SignInPage(),
+      home: SignInPage(
+        title: 'Time Tracker',
+      ),
       debugShowCheckedModeBanner: false,
     );
   }
