@@ -37,7 +37,16 @@ class SignInPage extends StatelessWidget {
             height: 8.0,
           ),
           CustomElevatedButton(
-            title: 'Sign in with Google',
+            child: Text(
+              'Sign in with Google',
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.black87,
+              ),
+            ),
+            color: Colors.white,
+            borderRadius: 4.0,
+            onPressed: () {},
           ),
         ],
       ),
