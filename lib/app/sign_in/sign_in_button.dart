@@ -17,6 +17,5 @@ class SignInButton extends CustomElevatedButton {
           ),
           color: color!,
           onPressed: onPressed!,
-          borderRadius: 4.0,
         );
 }

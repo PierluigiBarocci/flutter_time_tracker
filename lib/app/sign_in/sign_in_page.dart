@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_time_tracker/widgets/custom_elevated_button.dart';
+import 'package:flutter_time_tracker/app/sign_in/sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key, required this.title}) : super(key: key);
@@ -34,18 +34,50 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           SizedBox(
+            height: 48.0,
+          ),
+          SignInButton(
+            text: 'Sign in with Google',
+            textColor: Colors.black87,
+            color: Colors.white,
+            onPressed: () {},
+          ),
+          SizedBox(
             height: 8.0,
           ),
-          CustomElevatedButton(
-            child: Text(
-              'Sign in with Google',
-              style: TextStyle(
-                fontSize: 15.0,
-                color: Colors.black87,
-              ),
+          SignInButton(
+            text: 'Sign in with Facebook',
+            textColor: Colors.white,
+            color: Color(0xFF334D92),
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          SignInButton(
+            text: 'Sign in with Email',
+            textColor: Colors.white,
+            color: Colors.teal[700],
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            'or',
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Colors.black87,
             ),
-            color: Colors.white,
-            borderRadius: 4.0,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          SignInButton(
+            text: 'Go anonymous',
+            textColor: Colors.black,
+            color: Colors.lime[300],
             onPressed: () {},
           ),
         ],
