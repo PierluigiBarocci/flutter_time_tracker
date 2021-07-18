@@ -14,6 +14,9 @@ class _LandingPageState extends State<LandingPage> {
 
   void _updateUser(User user) {
     print('User id: ${user.uid}');
+    setState(() {
+      _user = user;
+    });
   }
 
   @override
@@ -21,7 +24,7 @@ class _LandingPageState extends State<LandingPage> {
     if (_user == null) {
       return SignInPage(
         title: 'Time Tracker',
-        onSignIn: (user) => _updateUser(user),
+        onSignIn: _updateUser,
       );
     } else {
       return Container();
