@@ -8,9 +8,12 @@ class SignInPage extends StatelessWidget {
   final String title;
 
   Future<void> _signInAnonymously() async {
-    final userCredentials = await FirebaseAuth.instance.signInAnonymously();
-    print(
-        '🚀 ~ file: sign_in_page.dart ~ line 12 ~ SignInPage ~ Future<void>_signInAnonymously ~ userCredentials, ${userCredentials.user!.uid}');
+    try {
+      final userCredentials = await FirebaseAuth.instance.signInAnonymously();
+      print('${userCredentials.user!.uid}');
+    } catch (e) {
+      print('Somethinng went wrong::: ${e.toString()}');
+    }
   }
 
   @override
