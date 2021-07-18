@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_time_tracker/app/home_page.dart';
 import 'package:flutter_time_tracker/app/sign_in/sign_in_page.dart';
 
 class LandingPage extends StatefulWidget {
@@ -10,24 +10,26 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  User? _user;
+  String? _userId = '';
 
-  void _updateUser(User user) {
-    print('User id: ${user.uid}');
+  void _updateUser(String userId) {
+    print('User id: $userId');
     setState(() {
-      _user = user;
+      _userId = userId;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_user == null) {
+    if (_userId == '') {
       return SignInPage(
         title: 'Time Tracker',
-        onSignIn: _updateUser,
+        onSignIn: (user) => _updateUser(user.uid),
       );
     } else {
-      return Container();
+      return HomePage(
+        onSignOut: () => _updateUser(''),
+      );
     }
   }
 }
